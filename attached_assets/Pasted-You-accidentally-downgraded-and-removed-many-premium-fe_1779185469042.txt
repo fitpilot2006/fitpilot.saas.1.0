@@ -1,0 +1,449 @@
+You accidentally downgraded and removed many premium features from my Gym SaaS platform during migration/export.
+
+I need you to FULLY RESTORE and UPGRADE the project into a MODERN PREMIUM PRODUCTION-LEVEL GYM SAAS PLATFORM.
+
+The current app is missing core functionality, premium UI/UX, automation, branding tools, QR systems, member systems, admin controls, and advanced dashboards.
+
+====================================================
+MAIN ISSUES TO FIX
+==================
+
+* WhatsApp reminders missing
+* QR scanner missing in staff panel
+* Member QR download missing
+* Auto membership date system missing
+* Country code dropdown missing
+* Currency selector missing
+* Logo upload missing
+* Thumbnail/banner upload missing
+* Branding studio incomplete
+* Premium animations removed
+* Dashboard simplified
+* Member login accesses incorrect/basic system
+* Gym access control missing
+* Pending gym approval system incomplete
+* Member limit system missing
+* Admin monitoring system missing
+* Staff attendance tools missing
+* Payment reminders removed
+* Date pickers/calendars removed
+* Mobile UI broken
+* UI/UX became outdated/basic
+
+I want the app restored into a PREMIUM SaaS experience similar to:
+
+* Gymdesk
+* Zen Planner
+* Mindbody
+
+====================================================
+
+1. WHATSAPP REMINDER SYSTEM
+   ====================================================
+
+Add full WhatsApp automation:
+
+* payment reminders
+* membership expiry reminders
+* attendance reminders
+* renewal reminders
+* overdue payment alerts
+* welcome messages
+
+Add:
+
+* WhatsApp settings page
+* Twilio/WhatsApp API integration
+* automated scheduled reminders
+* custom templates
+* send test message button
+
+====================================================
+2. QR ATTENDANCE SYSTEM
+=======================
+
+Restore FULL QR system:
+
+* QR generation per member
+* downloadable QR
+* printable QR card
+* animated QR modal
+* camera scanner
+* mobile scanner
+* scan history
+* duplicate scan prevention
+* attendance success animation
+* scan sound
+
+Add QR scanner in:
+
+* staff panel
+* attendance page
+
+====================================================
+3. MEMBER PORTAL SYSTEM
+=======================
+
+When a member enters:
+
+* member code
+* QR/member ID
+* email/password
+
+The system should:
+
+* automatically identify their gym
+* connect them to that gym
+* load gym branding/theme
+* load ALL gym member features correctly
+
+Create PREMIUM member dashboard:
+
+* attendance history
+* payment history
+* pending dues
+* invoices
+* QR attendance card
+* QR download button
+* expiry countdown
+* notifications
+* workout plans
+* trainer notes
+* gym announcements
+
+Members should ONLY access:
+
+* their own profile/data
+  NOT admin controls.
+
+====================================================
+4. AUTO MEMBERSHIP DATE SYSTEM
+==============================
+
+Restore:
+
+* automatic join date
+* automatic expiry date
+* membership duration automation
+* auto renewal calculations
+* auto due-date selection
+
+Add:
+
+* 1 month
+* 3 month
+* 6 month
+* 12 month
+* custom duration
+
+====================================================
+5. COUNTRY CODE & PHONE SYSTEM
+==============================
+
+Add international phone input everywhere:
+
+* gym registration
+* member registration
+* emergency contacts
+* owner details
+* staff details
+
+Features:
+
+* country dropdown
+* flags
+* validation
+* auto formatting
+
+====================================================
+6. CURRENCY SYSTEM
+==================
+
+Restore:
+
+* currency selector
+* multi currency support
+* global currency application
+
+Add:
+
+* USD
+* INR
+* AED
+* EUR
+* GBP
+* custom currency
+
+Apply currency globally:
+
+* dashboard
+* invoices
+* payments
+* reports
+
+====================================================
+7. PREMIUM BRANDING STUDIO
+==========================
+
+Restore FULL branding studio.
+
+Add:
+
+* logo upload
+* thumbnail upload
+* banner upload
+* drag/drop upload
+* image cropper
+* preview system
+* live dashboard preview
+
+Add themes:
+
+* Dark
+* Light
+* Neon
+* Premium Gold
+* Modern Blue
+* Custom Theme Builder
+
+Add:
+
+* color controls
+* typography controls
+* custom CSS
+* live preview
+* mobile preview
+* favicon upload
+* sidebar logo upload
+* login background upload
+
+Branding should instantly apply globally.
+
+====================================================
+8. PREMIUM UI/UX RESTORATION
+============================
+
+Restore modern SaaS UI:
+
+* Framer Motion animations
+* hover effects
+* glowing buttons
+* glassmorphism
+* gradients
+* smooth transitions
+* premium charts
+* loading skeletons
+* responsive layouts
+* modern typography
+
+Improve:
+
+* spacing
+* shadows
+* mobile UI
+* navigation
+* dashboard layouts
+
+====================================================
+9. ADMIN PANEL UPGRADE
+======================
+
+Add advanced admin controls:
+
+* monitor all gyms
+* monitor gym members
+* monitor revenue
+* gym analytics
+* suspend gyms
+* activate gyms
+* delete gyms
+
+Add access duration management:
+
+* 1 month
+* 3 month
+* 6 month
+* 12 month
+* custom duration
+
+Admin can:
+
+* extend access
+* revoke access
+* renew subscriptions
+
+====================================================
+10. MEMBER LIMIT SYSTEM
+=======================
+
+In admin panel add:
+
+* set member limit per gym
+* show used members
+* show remaining slots
+* prevent over-limit registrations
+
+====================================================
+11. GYM ACCESS CODE SYSTEM
+==========================
+
+In gym/staff signup add:
+
+* “Apply Access Code” button
+
+Flow:
+
+* gym submits request
+* goes into pending gyms
+* admin reviews
+* admin approves/rejects
+* admin assigns subscription/access duration
+* admin assigns member limits
+
+====================================================
+12. PENDING GYM MANAGEMENT
+==========================
+
+Create advanced pending gym section:
+
+* gym logo preview
+* owner details
+* business details
+* contact info
+* approval notes
+* approve/reject buttons
+* assign subscription
+* assign expiry
+* assign member limit
+
+====================================================
+13. ATTENDANCE PAGE
+===================
+
+Restore:
+
+* QR attendance
+* manual attendance
+* attendance calendar
+* analytics
+* charts
+* filters
+* export attendance
+
+====================================================
+14. PAYMENTS PAGE
+=================
+
+Restore:
+
+* advanced payment modal
+* date picker/calendar
+* recurring billing
+* invoice generator
+* payment analytics
+* pending/paid/overdue tabs
+* reminders
+
+====================================================
+15. STAFF PANEL
+===============
+
+Restore:
+
+* QR scanner
+* quick attendance
+* member lookup
+* attendance alerts
+* scan dashboard
+
+====================================================
+16. NOTIFICATION CENTER
+=======================
+
+Add:
+
+* in-app notifications
+* WhatsApp notifications
+* email notifications
+* toast alerts
+* renewal alerts
+* approval alerts
+
+====================================================
+17. ADDITIONAL PREMIUM FEATURES
+===============================
+
+Add:
+
+* export PDF/Excel
+* activity logs
+* audit trail
+* revenue charts
+* member growth charts
+* quick action buttons
+* onboarding walkthrough
+* global search
+* keyboard shortcuts
+
+====================================================
+18. DATABASE & BACKEND
+======================
+
+Fix/create tables:
+
+* attendance
+* qr_tokens
+* branding
+* themes
+* notifications
+* payment_reminders
+* gym_access
+* member_limits
+* gym_requests
+
+Fix:
+
+* API routes
+* uploads
+* image storage
+* authentication
+* member access logic
+
+====================================================
+IMPORTANT
+=========
+
+DO NOT simplify pages.
+DO NOT replace premium UI with basic forms.
+DO NOT remove existing data.
+KEEP authentication working.
+KEEP admin accounts working.
+RESTORE original premium feel and animations.
+
+====================================================
+FINAL GOAL
+==========
+
+Transform the project into a PREMIUM MODERN GYM SAAS PLATFORM with:
+
+* advanced dashboards
+* QR attendance
+* WhatsApp automation
+* premium branding studio
+* admin management
+* member portals
+* modern animations
+* responsive mobile UI
+* premium UX
+
+After completion:
+
+1. Run migrations
+2. Fix frontend/backend
+3. Verify uploads work
+4. Verify QR system works
+5. Verify WhatsApp works
+6. Verify member access works
+7. Verify admin controls work
+8. Test all pages
+9. Show preview URL

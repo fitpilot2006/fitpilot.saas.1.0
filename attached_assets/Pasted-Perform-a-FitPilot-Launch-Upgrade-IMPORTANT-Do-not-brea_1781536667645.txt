@@ -1,0 +1,256 @@
+Perform a FitPilot Launch Upgrade.
+
+IMPORTANT:
+
+Do not break:
+
+* Authentication
+* Existing gyms
+* Existing members
+* Existing plans
+* Existing database
+* Supabase integration
+* Payments
+* Attendance
+
+==================================
+
+1. FIX WORKOUT & DIET PERSISTENCE
+   ==================================
+
+Current Problem:
+
+Workout plans and diet plans are generated successfully.
+
+The workout overview and schedule appear correctly.
+
+However, when reopening plans later from Gym Portal or Member Portal, detailed data is missing.
+
+Workout data missing:
+
+* Exercises
+* Sets
+* Reps
+* Rest periods
+* Notes
+* Warm-up
+* Cool-down
+
+Diet data missing:
+
+* Breakfast
+* Lunch
+* Dinner
+* Snacks
+* Calories
+* Protein
+* Carbs
+* Fat
+* Water intake
+
+Required:
+
+Audit:
+
+* AI generation
+* Database save
+* Database retrieval
+* Gym portal display
+* Member portal display
+
+Ensure COMPLETE workout and diet data is stored permanently.
+
+Verify persistence after:
+
+* Refresh
+* Logout
+* Login
+* New session
+
+Add debugging logs for:
+
+* Save
+* Load
+* Parse
+
+==================================
+2. ACCESS CODE SYSTEM
+=====================
+
+Add a professional Access Code application system.
+
+Landing Page:
+
+Add section:
+
+"Request Access Code"
+
+Fields:
+
+* Gym Name
+* Owner Name
+* Email
+* Phone Number
+* Number of Members
+* Plan Interested In
+
+When submitted:
+
+Store request in database.
+
+==================================
+3. ADMIN NOTIFICATIONS
+======================
+
+When a gym requests an access code:
+
+Send notification to platform admin.
+
+Use:
+
+[fitpilot.saas@gmail.com](mailto:fitpilot.saas@gmail.com)
+
+Methods:
+
+* Email notification
+* Admin dashboard notification
+
+Include:
+
+* Gym name
+* Owner name
+* Email
+* Phone number
+* Requested plan
+
+==================================
+4. ACCESS CODE MANAGEMENT
+=========================
+
+Admin can:
+
+* Approve request
+* Reject request
+* Generate code
+* Assign trial duration
+* Assign plan
+
+Available plans:
+
+Basic
+Pro
+Enterprise
+
+==================================
+5. PRICING UPDATE
+=================
+
+Update landing page pricing.
+
+Show launch promotion:
+
+50% OFF FOR FIRST 3 MONTHS
+
+Display clearly.
+
+Plans:
+
+BASIC
+
+Regular:
+$19/month
+
+Launch:
+$9.50/month
+
+Up to 100 members
+
+Features:
+
+* Member Management
+* Attendance
+* Payments
+* Basic Reports
+
+PRO
+
+Regular:
+$49/month
+
+Launch:
+$24.50/month
+
+Up to 500 members
+
+Features:
+
+* Everything in Basic
+* AI Workout Generator
+* AI Diet Planner
+* Advanced Reports
+* Staff Accounts
+
+ENTERPRISE
+
+Regular:
+$99/month
+
+Launch:
+$49.50/month
+
+Unlimited Members
+
+Features:
+
+* Everything in Pro
+* Multi Branch Support
+* Advanced Analytics
+* Priority Support
+
+==================================
+6. ACCESS CODE FLOW
+===================
+
+Landing Page:
+
+Request Access Code
+
+↓
+
+Admin receives notification
+
+↓
+
+Admin approves
+
+↓
+
+Admin creates code
+
+↓
+
+Gym receives code
+
+↓
+
+Gym registers
+
+↓
+
+Trial starts
+
+==================================
+7. TESTING
+==========
+
+Verify:
+
+* Workout details remain visible forever
+* Diet details remain visible forever
+* Access code requests save correctly
+* Admin receives notifications
+* Pricing displays correctly
+* 50% launch promotion displays correctly
+* Existing functionality remains working
+
+Provide final implementation report.

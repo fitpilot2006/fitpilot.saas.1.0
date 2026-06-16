@@ -1,0 +1,321 @@
+You accidentally downgraded my Gym SaaS app into a basic version during migration/export.
+
+I need you to RESTORE and REBUILD the full PRO version features, UI, branding system, automation, and advanced gym management tools.
+
+====================================================
+CURRENT PROBLEMS
+====================================================
+
+- QR scanner is missing
+- Attendance scanner missing
+- Payment reminder system missing
+- Auto due-date system missing
+- Country code selector removed from phone input
+- Currency selection removed
+- Payment modal became basic
+- Member join code system missing
+- Gym registration auto-code generation missing
+- Platform admin blocked gyms incorrectly
+- Branding page broken
+- Theme system missing
+- Logo upload missing
+- Thumbnail/banner upload missing
+- Dashboard widgets simplified
+- Advanced analytics gone
+- Forms became outdated/basic
+- Mobile UI broken
+- Dark theme styling partially lost
+- Member request approval system missing
+- Notifications/reminders missing
+- Date picker/calendar removed
+- Charts removed
+- Premium components removed
+
+I want the app restored to a PREMIUM MODERN SAAS VERSION.
+
+====================================================
+RESTORE THESE FEATURES
+====================================================
+
+1. QR CODE SYSTEM
+- Restore QR attendance scanner
+- Camera scanner support
+- QR generation per member
+- Scan history
+- Auto attendance marking
+
+2. MEMBER JOIN CODE SYSTEM
+- When a gym registers:
+  - auto generate unique member join code
+  - show code at top dashboard
+  - allow copying
+- Members can request joining using code
+- Gym owner approves/rejects requests
+
+3. PAYMENT SYSTEM
+Restore:
+- payment reminders
+- due date automation
+- overdue alerts
+- pending payment notifications
+- monthly recurring billing
+- currency selector
+- payment history
+- payment statistics
+- invoice support
+
+4. PHONE INPUT
+Restore:
+- country code dropdown
+- international format
+- validation
+
+5. DASHBOARD
+Restore PRO widgets:
+- revenue charts
+- attendance analytics
+- membership growth
+- recent payments
+- expiring memberships
+- pending approvals
+- monthly comparison charts
+- active vs inactive members
+
+6. UI/UX
+Upgrade ALL pages:
+- modern SaaS design
+- glassmorphism cards
+- gradients
+- premium dark mode
+- responsive mobile UI
+- modern modal animations
+- proper spacing
+- professional typography
+- smooth transitions
+
+7. BRANDING SYSTEM
+Restore and upgrade branding into a premium branding studio.
+
+====================================================
+BRANDING FEATURES
+====================================================
+
+A. THEME SYSTEM
+Add:
+- Dark Theme
+- Light Theme
+- Neon Theme
+- Premium Gold Theme
+- Modern Blue Theme
+- Custom Theme Builder
+
+B. COLOR CUSTOMIZATION
+Restore:
+- primary color
+- secondary color
+- accent color
+- sidebar color
+- card color
+- button color
+- text color
+- gradient backgrounds
+
+C. LIVE PREVIEW
+Add:
+- real-time theme preview
+- instant UI updates
+- mobile preview
+- desktop preview
+- preview before save
+
+D. LOGO UPLOAD
+Restore:
+- logo upload
+- drag and drop
+- image cropper
+- preview
+- remove/change logo
+
+E. THUMBNAIL / BANNER UPLOAD
+Restore:
+- gym thumbnail upload
+- hero banner upload
+- dashboard banner upload
+- responsive image sizing
+
+F. BRAND ASSETS
+Add:
+- favicon upload
+- app icon upload
+- login background upload
+- sidebar logo upload
+
+G. FONT SYSTEM
+Add:
+- font selection
+- heading font
+- body font
+- font size controls
+
+H. CUSTOM CSS
+Add:
+- custom CSS editor
+- save custom styles safely
+
+I. GLOBAL APPLY
+Branding changes must apply instantly across:
+- dashboard
+- sidebar
+- login page
+- member portal
+- attendance page
+- invoices
+- payment pages
+
+====================================================
+ATTENDANCE PAGE
+====================================================
+
+Restore:
+- QR scanner
+- manual check-in
+- attendance calendar
+- attendance statistics
+- filter by date/member
+
+====================================================
+MEMBERS PAGE
+====================================================
+
+Restore:
+- member profile photos
+- membership status badges
+- expiry countdown
+- notes
+- emergency contacts
+- search/filter/sort
+- active/inactive tabs
+- membership history
+
+====================================================
+PAYMENTS PAGE
+====================================================
+
+Restore:
+- modern payment modal
+- date picker/calendar
+- recurring payments
+- pending/paid/overdue states
+- reminder automation
+- revenue tracking
+- currency support
+
+====================================================
+PLATFORM ADMIN
+====================================================
+
+Fix and restore:
+- gym suspension system
+- gym activation
+- subscription management
+- analytics
+- access control
+- admin dashboard
+- gym monitoring
+
+====================================================
+NOTIFICATIONS
+====================================================
+
+Add:
+- reminder toasts
+- payment due alerts
+- membership expiry alerts
+- join request alerts
+- dashboard notifications
+
+====================================================
+AUTO FEATURES
+====================================================
+
+Implement:
+- auto member ID generation
+- auto QR generation
+- auto gym join code generation
+- auto attendance timestamps
+- auto payment reminders
+
+====================================================
+DATABASE
+====================================================
+
+Create/fix all missing tables and relations:
+- attendance
+- member_requests
+- gym_join_codes
+- payment_reminders
+- branding
+- notifications
+- qr_tokens
+- themes
+- uploads
+
+Ensure branding settings are stored per gym:
+- logo_url
+- banner_url
+- thumbnail_url
+- theme
+- colors
+- typography
+- custom_css
+
+====================================================
+MODERN COMPONENTS
+====================================================
+
+Use:
+- shadcn/ui
+- Tailwind
+- Framer Motion
+- responsive drawer/sidebar
+- charts
+- loading skeletons
+- toast notifications
+- premium date pickers
+- file upload components
+
+====================================================
+IMPORTANT
+====================================================
+
+DO NOT remove existing data.
+DO NOT simplify pages.
+DO NOT replace advanced UI with basic forms.
+KEEP existing authentication working.
+KEEP current database records.
+
+====================================================
+FINAL GOAL
+====================================================
+
+Restore my project into a PREMIUM production-level Gym SaaS platform similar to:
+- Zen Planner
+- Mindbody
+- Gymdesk
+
+with:
+- modern UI
+- advanced automation
+- branding studio
+- QR attendance
+- payment automation
+- premium dashboards
+- mobile responsive SaaS design
+
+After fixing:
+1. Run database migrations
+2. Fix all API routes
+3. Start backend and frontend
+4. Verify all pages work
+5. Show preview URL
+6. Ensure no broken pages remain

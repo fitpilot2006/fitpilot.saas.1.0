@@ -1,0 +1,217 @@
+Perform a FitPilot Launch Readiness Upgrade.
+
+IMPORTANT:
+Keep all existing functionality working.
+Do not break authentication.
+Do not break Supabase integration.
+Do not break gym data.
+Do not remove any existing working features.
+
+---
+
+1. REMOVE FAKE MARKETING NUMBERS
+
+---
+
+Remove all unverified statistics from the landing page including:
+
+* 10,000+ Members Managed
+* 500+ Gyms Powered
+* 99.9% Uptime
+* +40% Renewal Increase
+
+Replace with real feature-focused content.
+
+Use professional SaaS messaging instead of fake metrics.
+
+---
+
+2. UPDATE PRICING PLANS
+
+---
+
+Create three plans:
+
+BASIC
+
+* Up to 100 Members
+* Attendance Tracking
+* Payment Management
+* Member Management
+* Basic Reports
+
+PRO
+
+* Up to 500 Members
+* Everything in Basic
+* AI Workout Generator
+* AI Diet Planner
+* Advanced Reports
+* WhatsApp Features
+* Multi Staff Accounts
+
+ENTERPRISE
+
+* Unlimited Members
+* Everything in Pro
+* Multi Branch Support
+* Priority Support
+* Advanced Analytics
+* Future Premium Features
+
+Display these plans clearly on the landing page.
+
+---
+
+3. PLAN-BASED FEATURE ACCESS
+
+---
+
+Implement feature restrictions.
+
+If gym is Basic:
+
+Allow:
+
+* Attendance
+* Payments
+* Members
+* Basic Reports
+
+Disable:
+
+* AI Workout Generator
+* AI Diet Planner
+* Premium Analytics
+* Future Premium Features
+
+If gym is Pro:
+
+Allow all Pro features.
+
+If gym is Enterprise:
+
+Allow all features.
+
+Hide or disable unavailable features with a message:
+
+"Upgrade your plan to access this feature."
+
+---
+
+4. PLAN MANAGEMENT IN ADMIN PANEL
+
+---
+
+Add Gym Plan Management section.
+
+Platform Admin should be able to:
+
+* View gym plan
+* Change gym plan
+* Upgrade gym
+* Downgrade gym
+* Set member limits
+
+Available plans:
+
+* Basic
+* Pro
+* Enterprise
+
+---
+
+5. MEMBER LIMIT ENFORCEMENT
+
+---
+
+Basic:
+Maximum 100 members
+
+Pro:
+Maximum 500 members
+
+Enterprise:
+Unlimited
+
+When limit reached:
+
+Prevent new member creation.
+
+Show:
+
+"Member limit reached. Upgrade your plan."
+
+---
+
+6. COMING SOON FEATURES SECTION
+
+---
+
+Add professional Coming Soon section.
+
+Future Features:
+
+* Mobile Apps (iOS & Android)
+* QR Code Check-In
+* AI Business Insights
+* Automated Lead Management
+* Trainer Performance Tracking
+* Member Progress Photos
+* Smart Membership Renewals
+* Public Gym Website Builder
+* Online Class Booking
+* Stripe Subscription Billing
+
+---
+
+7. FREE TRIAL SYSTEM
+
+---
+
+Add Access Code Trial System.
+
+Only platform admins can create access codes.
+
+Admin can define:
+
+* Trial length
+* Plan assigned
+* Expiration date
+* Usage limit
+
+Gym registration requires a valid access code.
+
+---
+
+8. PERFORMANCE AND SCALABILITY
+
+---
+
+Optimize application for launch.
+
+* Lazy loading
+* Code splitting
+* Query optimization
+* Pagination
+* Error handling
+* Loading states
+* Caching
+
+Target:
+Support at least 1,000 concurrent active users without performance degradation.
+
+---
+
+9. FINAL REPORT
+
+---
+
+Provide:
+
+* Feature access matrix
+* Plan limitation report
+* Scalability report
+* Performance report
+* Launch readiness report
+* Recommended next features

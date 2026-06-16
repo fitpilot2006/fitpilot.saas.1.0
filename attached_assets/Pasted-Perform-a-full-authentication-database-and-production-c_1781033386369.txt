@@ -1,0 +1,153 @@
+Perform a full authentication, database, and production connectivity audit for FitPilot.
+
+Important:
+
+Do NOT assume the application uses Supabase.
+
+First inspect the entire codebase and determine the actual production architecture currently used by FitPilot.
+
+Identify:
+
+* Authentication provider
+* Database provider
+* ORM
+* Session management
+* Environment variables
+* Login system
+* User storage system
+* Multi-tenant gym isolation system
+
+Goal:
+
+Restore the application so that all existing gym owners, admins, members, and production data continue working exactly as they did in the original FitPilot deployment.
+
+Tasks:
+
+1. Architecture Discovery
+
+Analyze the codebase and identify:
+
+* Whether authentication uses JWT, sessions, Supabase Auth, custom auth, or another provider
+* Whether the database uses PostgreSQL, Supabase, Neon, Replit Database, or another provider
+* Whether Drizzle, Prisma, or another ORM is used
+* Which environment variables are required
+
+Provide a complete architecture report.
+
+2. Existing Database Recovery
+
+Determine where the original production data is expected to come from.
+
+Inspect:
+
+* DATABASE_URL
+* Authentication configuration
+* Database connection files
+* Drizzle configuration
+* Migration files
+* Schema definitions
+
+Verify whether the current project is connected to the original production database.
+
+3. Existing User Recovery
+
+Verify that existing users can log in using their original credentials.
+
+Test:
+
+* Gym owner login
+* Admin login
+* Session persistence
+* Password verification
+* JWT validation
+* Authentication middleware
+
+Do NOT:
+
+* Reset passwords
+* Create replacement accounts
+* Create duplicate users
+* Replace authentication systems
+
+4. Existing Gym Recovery
+
+Verify that existing gyms are accessible.
+
+Check:
+
+* gyms
+* gym_users
+* members
+* attendance
+* payments
+* gym_subscriptions
+
+Verify relationships remain intact.
+
+5. Multi-Tenant Security
+
+Verify:
+
+* Gym owners only access their own gym
+* Admin can access all gyms
+* Data isolation remains intact
+* Existing permissions continue working
+
+6. Environment Verification
+
+Inspect all environment variables.
+
+Identify missing variables required to restore production functionality.
+
+Provide a report showing:
+
+* Variables found
+* Variables missing
+* Variables required
+
+7. Production Validation
+
+Test:
+
+* Login
+* Logout
+* Dashboard
+* Members
+* Attendance
+* Payments
+* Subscriptions
+* Search
+* Admin panel
+* Member portal
+* AI Workout Generator
+* AI Diet Planner
+
+8. Recovery Strategy
+
+If the original production database is not connected:
+
+* Determine exactly what database the previous deployment used
+* Determine what credentials are missing
+* Determine what data source must be reconnected
+* Provide step-by-step recovery instructions
+
+Do NOT create a new database.
+
+Do NOT create new users.
+
+Do NOT generate fake data.
+
+Do NOT replace the existing authentication system.
+
+Success Criteria:
+
+The application must reconnect to the original production database and authentication system so that existing gym owners, admins, members, and historical data continue working with their original credentials exactly as before.
+
+Provide:
+
+* Architecture Report
+* Authentication Report
+* Database Connectivity Report
+* Production Recovery Report
+* Missing Configuration Report
+* Recommended Fixes

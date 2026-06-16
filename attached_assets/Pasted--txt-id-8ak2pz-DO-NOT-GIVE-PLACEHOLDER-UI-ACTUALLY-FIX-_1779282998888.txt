@@ -1,0 +1,137 @@
+```txt id="8ak2pz"
+DO NOT GIVE PLACEHOLDER UI. ACTUALLY FIX THE LOGIC AND CONNECT EVERYTHING.
+
+MAIN PROBLEM:
+Branding changes are NOT applying globally.
+Dashboard data is NOT connected to Supabase.
+Member code feature is missing.
+Header thumbnail is missing.
+Outside auth/admin theme is still old.
+Fix all of these completely.
+
+1. GLOBAL BRANDING ENGINE (IMPORTANT)
+Current branding only changes small UI parts.
+Create REAL global branding system using CSS variables.
+
+Apply branding dynamically to:
+- gym dashboard background
+- sidebar
+- top navbar
+- cards
+- buttons
+- inputs
+- modals
+- alerts
+- tables
+- login page
+- signup page
+- admin panel
+- mobile menu
+
+Create variables like:
+--primary-color
+--secondary-color
+--background-color
+--card-color
+--text-color
+--button-color
+--button-text
+--border-color
+
+When branding settings change:
+- instantly update ALL pages
+- instantly update ALL buttons
+- instantly update ALL backgrounds
+
+Default outside theme:
+- dark black background
+- dark red accents
+- premium glow effect
+
+2. FIX BUTTON COLORS
+Buttons are still using hardcoded colors.
+Remove ALL hardcoded Tailwind colors like:
+bg-blue
+bg-purple
+bg-orange
+
+Replace with branding variables:
+background: var(--button-color)
+
+Apply to ALL gym panel buttons.
+
+3. AUTH / ADMIN THEME
+Outside login/signup/admin pages MUST use:
+- black + dark red premium theme
+- glassmorphism
+- red gradients
+- dark background grid
+- matching branding
+
+4. MEMBER CODE FIX
+In Add Member page:
+- add visible “Member Code” input
+- auto generate code like:
+MEM-48392
+- save member_code in database
+- show member code in member list/profile
+
+When member logs in with gym code:
+- automatically attach member to gym_id
+- update member counts instantly
+
+5. DASHBOARD REAL DATA FIX
+Dashboard is showing zeros because queries are broken.
+
+Fix ALL Supabase queries and connect:
+- total members
+- active members
+- expired members
+- today checkins
+- monthly revenue
+- payments
+- attendance
+- workout plans
+- recent joins
+
+Dashboard must auto refresh after:
+- adding member
+- payment
+- attendance
+- renewal
+
+6. HEADER THUMBNAIL FIX
+Dashboard header thumbnail is missing.
+
+Use gym branding thumbnail as:
+- dashboard hero background
+- sidebar logo
+- mobile menu image
+
+If no thumbnail:
+- show fallback gradient image
+
+Add overlay for readability.
+
+7. FIX SUPABASE TABLE CONNECTIONS
+Check ALL table names and relations:
+- gyms
+- members
+- payments
+- attendance
+- branding
+- subscriptions
+
+Fix broken queries causing zero stats.
+
+8. FINAL REQUIREMENT
+After coding:
+- run app successfully
+- verify branding works globally
+- verify dashboard numbers update
+- verify member code exists
+- verify thumbnail appears
+- verify login/signup theme changed
+- verify buttons use branding colors
+- then show working preview
+```

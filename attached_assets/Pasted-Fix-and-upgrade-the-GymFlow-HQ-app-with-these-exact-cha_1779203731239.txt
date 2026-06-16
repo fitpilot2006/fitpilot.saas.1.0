@@ -1,0 +1,190 @@
+Fix and upgrade the GymFlow HQ app with these exact changes WITHOUT breaking existing data, Supabase connection, login system, or UI.
+
+========================
+1. FIX QR SCANNER CAMERA
+========================
+- QR scanner camera is not opening.
+- Fix camera permissions and scanner initialization.
+- Make QR attendance scanner work on:
+  - mobile browsers
+  - desktop browsers
+  - Replit preview
+- Add:
+  - Start Camera button
+  - Switch Camera button
+  - Error message if permission denied
+- After successful scan:
+  - mark attendance automatically
+  - show success animation
+
+========================
+2. REMOVE TWILIO
+========================
+- Completely remove Twilio integration and dependencies.
+- Replace reminder system with simple WhatsApp deep-link system.
+
+New behavior:
+- Admin clicks “WhatsApp Reminder”
+- WhatsApp opens automatically
+- Pre-filled message/template appears
+- Sends to member number automatically
+
+Template example:
+“Hello {member_name}, your gym payment is pending for {gym_name}. Please contact gym administration.”
+
+- Use country code automatically.
+- Add WhatsApp icon buttons in:
+  - Members
+  - Payments
+  - Attendance
+  - Alerts
+
+========================
+3. FIX LOGO & BANNER UPLOAD
+========================
+Current issue:
+- Only URL option exists.
+
+Required:
+- Remove logo/banner URL fields completely.
+- Add upload from device option:
+  - Upload Logo
+  - Upload Banner/Thumbnail
+- Save images properly in Supabase storage.
+- Show live preview after upload.
+- Add drag-and-drop upload UI.
+- Compress large images automatically.
+
+========================
+4. FIX MEMBER LOGIN REDIRECT
+========================
+Current issue:
+- Members go to gym owner dashboard.
+
+Required:
+- Members must go ONLY to Member Portal.
+
+Create a proper modern Member Portal with:
+- Profile card
+- QR membership card
+- Download QR button
+- Attendance history
+- Total gym visits this month
+- Active plan
+- Payment history
+- Expiry date
+- Upcoming reminders
+- BMI section
+- Workout progress
+- Motivational progress widgets
+- Mobile responsive UI
+- Smooth animations
+
+========================
+5. COMBINE LOGIN & SIGNUP
+========================
+Create a modern landing auth system.
+
+When clicking Login:
+Show:
+- Continue as Gym Owner
+- Continue as Member
+
+When clicking Signup:
+Show:
+- Gym Signup
+- Member Signup
+
+Add:
+- animated cards
+- icons
+- transitions
+- modern SaaS style UI
+
+========================
+6. REMOVE ADVANCED BRANDING
+========================
+- Remove “Advanced” section from Branding Studio.
+- Keep only:
+  - Theme selection
+  - Logo upload
+  - Banner upload
+  - Primary color
+  - Accent color
+  - Gym name
+  - Tagline
+
+========================
+7. ACCESS CODE SYSTEM FOR NEW GYMS
+========================
+In Gym Signup:
+Add:
+“Have Access Code?” button
+
+Flow:
+- Gym enters access code
+- Fill gym details:
+  - Gym Name
+  - Owner Name
+  - Phone Number
+  - Country Code
+  - Email
+  - Address
+  - Plan requested
+
+After submit:
+- Request goes to Admin Panel
+- Show in “Pending Gyms”
+
+Admin can:
+- Approve gym
+- Reject gym
+- Set:
+  - expiry duration
+  - member limit
+  - plan
+  - custom access duration
+
+========================
+8. ADD COUNTRY CODE EVERYWHERE
+========================
+All phone inputs must support:
+- country selector
+- country flag
+- auto formatting
+
+Apply in:
+- member forms
+- gym forms
+- staff forms
+- alerts
+- WhatsApp reminders
+
+========================
+9. GENERAL UI/UX IMPROVEMENTS
+========================
+- Restore professional SaaS UI quality
+- Add:
+  - animations
+  - hover effects
+  - loading states
+  - skeleton loaders
+  - transitions
+  - modern dashboard cards
+  - responsive mobile design
+  - improved spacing
+  - glassmorphism effects
+  - better typography
+
+========================
+10. IMPORTANT RULES
+========================
+- Do NOT break Supabase auth
+- Do NOT remove existing data
+- Do NOT overwrite database
+- Keep existing gym records
+- Fix TypeScript errors
+- Fix all broken imports
+- Ensure preview runs correctly in Replit
+- Auto-install missing dependencies
+- Make everything production-ready

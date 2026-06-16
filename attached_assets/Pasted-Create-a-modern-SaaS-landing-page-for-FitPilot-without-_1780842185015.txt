@@ -1,0 +1,126 @@
+Create a modern SaaS landing page for FitPilot without changing any existing application functionality.
+
+Requirements
+
+Platform Name:
+FitPilot
+
+Tagline:
+Powering Stronger Gyms
+
+Brand Colors:
+
+* Red #E10600
+* Black #000000
+* White #FFFFFF
+
+Use the uploaded FitPilot logo.
+
+Landing Page Sections
+
+1. Hero Section
+
+Headline:
+Run Your Gym Like a Pro
+
+Subheadline:
+Manage memberships, attendance, payments, staff, and gym operations from one powerful platform.
+
+Buttons:
+
+* Start Free Trial
+* Login
+
+2. Features Section
+
+Display feature cards:
+
+* Member Management
+* Attendance Tracking
+* Payment Management
+* Subscription Plans
+* Staff Management
+* Analytics Dashboard
+* Multi-Branch Support
+* Mobile Friendly
+
+3. Dashboard Preview Section
+
+Show professional mockup cards or screenshots area for:
+
+* Dashboard
+* Members
+* Attendance
+* Payments
+
+4. Benefits Section
+
+Why Choose FitPilot
+
+* Save Administrative Time
+* Reduce Missed Payments
+* Improve Member Retention
+* Track Business Growth
+* Manage Multiple Branches
+
+5. Pricing Section
+
+Create three plans:
+
+Starter
+Pro
+Enterprise
+
+Display "Contact Us" or "Coming Soon"
+
+6. FAQ Section
+
+Add professional SaaS FAQs.
+
+7. Contact Section
+
+Email:
+[fitpilot.saas@gmail.com](mailto:fitpilot.saas@gmail.com)
+
+8. Footer
+
+FitPilot
+Powering Stronger Gyms
+
+Support:
+[fitpilot.saas@gmail.com](mailto:fitpilot.saas@gmail.com)
+
+Technical Requirements
+
+* Keep all existing app functionality unchanged
+* Keep Supabase unchanged
+* Keep authentication unchanged
+* Keep database unchanged
+* Keep dashboard unchanged
+* Keep RLS policies unchanged
+
+Routing
+
+/ = Landing Page
+
+/login = Existing Login Page
+
+/dashboard = Existing Dashboard
+
+If a user is logged in:
+Redirect to dashboard.
+
+If not logged in:
+Show landing page.
+
+Design Style
+
+Premium SaaS
+Modern
+Fast
+Responsive
+Mobile First
+Gym Industry
+Red and Black Theme
+
+Optimize for performance and SEO.

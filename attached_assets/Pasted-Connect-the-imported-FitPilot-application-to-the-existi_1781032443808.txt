@@ -1,0 +1,101 @@
+Connect the imported FitPilot application to the existing production Supabase project and verify that all existing data, users, gyms, authentication, and admin access continue working exactly as before.
+
+Goal:
+Restore full connectivity to the original Supabase backend so that all existing gym owners can log in using their current email/password credentials and access their existing gym data.
+
+Requirements:
+
+1. Supabase Connection Verification
+
+* Verify SUPABASE_URL is connected to the original production database.
+* Verify SUPABASE_ANON_KEY is valid.
+* Verify any SERVICE_ROLE_KEY configuration.
+* Verify all authentication endpoints are working.
+* Verify database connectivity across the application.
+
+2. Authentication Recovery
+
+* Ensure existing Supabase Auth users can log in with their original credentials.
+* Do NOT create new users.
+* Do NOT reset passwords.
+* Do NOT modify authentication providers.
+* Verify email/password authentication works correctly.
+* Verify session persistence works correctly.
+* Verify logout functionality works correctly.
+
+3. Existing Gym Owner Access
+
+* Existing gym owners must be able to:
+
+  * Login with existing credentials.
+  * Access their existing gym.
+  * View existing members.
+  * View existing attendance records.
+  * View existing payments.
+  * View existing subscriptions.
+  * Access all previous data.
+
+4. Admin Access Verification
+
+* Verify platform admin accounts continue working.
+* Verify admin login credentials continue working.
+* Verify admin dashboard loads correctly.
+* Verify admin can view all gyms.
+* Verify admin can manage subscriptions.
+* Verify admin reports function correctly.
+
+5. Multi-Tenant Verification
+
+* Verify each gym owner only sees their own gym data.
+* Verify RLS policies remain active.
+* Verify gym isolation is functioning.
+* Verify admin retains full platform access.
+
+6. Database Integrity Checks
+
+Verify all production tables are connected and accessible:
+
+* gyms
+* gym_users
+* members
+* attendance
+* payments
+* gym_subscriptions
+
+Do NOT:
+
+* Delete data
+* Modify production data
+* Reset tables
+* Change passwords
+* Create duplicate gyms
+* Create duplicate users
+* Replace authentication systems
+
+7. Full Testing
+
+Test and verify:
+
+* Gym owner login
+* Admin login
+* Dashboard loading
+* Member management
+* Attendance tracking
+* Payment tracking
+* Search functionality
+* Subscription functionality
+* Session persistence
+
+After completion provide:
+
+* Supabase connection status
+* Authentication status
+* Admin access status
+* Gym owner access status
+* Database connectivity report
+* List of issues found
+* List of fixes performed
+
+Success Criteria:
+
+A gym owner who previously used FitPilot can log in using their old email and password and immediately access all existing gym data without any migration, reset, or manual intervention.

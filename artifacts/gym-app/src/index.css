@@ -1,0 +1,298 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #dc2626;
+  --color-primary-foreground: #ffffff;
+}
+
+:root {
+  --gym-primary: #dc2626;
+  --gym-sidebar: #080408;
+  --gym-main-bg: #0a050a;
+  --gym-primary-20: #dc262633;
+  --gym-primary-10: #dc26261a;
+  --gym-card-bg: rgba(255, 255, 255, 0.04);
+  --gym-border: rgba(255, 255, 255, 0.07);
+  --gym-input-bg: rgba(255, 255, 255, 0.05);
+
+  /* Easing tokens */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
+
+  /* Duration tokens */
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 350ms;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hard overflow lock — prevents horizontal scroll glitch on mobile */
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  /* Premium font stack — Inter with system fallbacks */
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
+  background-color: #0a0a0f;
+  color: #f1f5f9;
+  overflow-x: hidden;
+  max-width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-synthesis: none;
+}
+
+#root {
+  overflow-x: hidden;
+  max-width: 100%;
+  min-height: 100svh;
+}
+
+/* =====================================================
+   MOBILE RENDERING FIX — Samsung Android / Chrome
+   backdrop-filter causes GPU white blocks, static
+   lines and compositor failures on mobile WebView.
+   ===================================================== */
+@media (max-width: 1023px) {
+  *,
+  *::before,
+  *::after {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    will-change: auto !important;
+  }
+
+  /* Reduce expensive background glows on mobile */
+  .mobile-hide-glow {
+    display: none !important;
+  }
+}
+
+/* Disable hover-triggered transforms on touch — they repaint on every tap */
+@media (hover: none) and (pointer: coarse) {
+  .hover\:-translate-y-0\.5:hover,
+  .group:hover .group-hover\:scale-110,
+  .group:hover .group-hover\:-translate-y-0\.5,
+  [class*="hover:scale-"]:hover,
+  [class*="hover:-translate"]:hover {
+    transform: none !important;
+  }
+
+  /* Reduce animation duration on mobile for perceived snappiness */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.15s !important;
+    transition-duration: 0.1s !important;
+  }
+}
+
+/* =====================================================
+   REDUCED MOTION SUPPORT
+   ===================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =====================================================
+   FOCUS STYLES — accessible, premium look
+   ===================================================== */
+:focus-visible {
+  outline: 2px solid var(--gym-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* =====================================================
+   SCROLLBAR
+   ===================================================== */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.20);
+}
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* =====================================================
+   SKELETON / SHIMMER
+   ===================================================== */
+@keyframes shimmer {
+  0%   { background-position: -400% 0; }
+  100% { background-position: 400% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04) 25%,
+    rgba(255, 255, 255, 0.09) 50%,
+    rgba(255, 255, 255, 0.04) 75%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+  border-radius: 0.5rem;
+}
+
+/* =====================================================
+   PAGE ENTRY ANIMATION
+   ===================================================== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.fade-up  { animation: fadeUp 0.28s var(--ease-out-quart) both; }
+.fade-in  { animation: fadeIn 0.22s ease-out both; }
+
+/* Staggered children — add to parent */
+.stagger > *:nth-child(1) { animation-delay: 0ms; }
+.stagger > *:nth-child(2) { animation-delay: 40ms; }
+.stagger > *:nth-child(3) { animation-delay: 80ms; }
+.stagger > *:nth-child(4) { animation-delay: 120ms; }
+.stagger > *:nth-child(5) { animation-delay: 160ms; }
+.stagger > *:nth-child(6) { animation-delay: 200ms; }
+.stagger > *:nth-child(7) { animation-delay: 240ms; }
+.stagger > *:nth-child(8) { animation-delay: 280ms; }
+
+/* =====================================================
+   CARD SYSTEM
+   ===================================================== */
+.card {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+}
+
+.card-shadow {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.card-shadow-lg {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.5), 0 10px 40px rgba(0,0,0,0.3);
+}
+
+/* =====================================================
+   CHART CONTAINER
+   ===================================================== */
+.chart-wrap {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  contain: layout style;
+}
+
+/* =====================================================
+   INTERACTIVE FEEDBACK
+   ===================================================== */
+.press-feedback {
+  transition: transform var(--dur-fast) var(--ease-out-quart),
+              opacity  var(--dur-fast) ease;
+}
+.press-feedback:active {
+  transform: scale(0.97);
+  opacity: 0.85;
+}
+
+/* =====================================================
+   TYPOGRAPHY HELPERS
+   ===================================================== */
+.text-balance { text-wrap: balance; }
+
+.tabular-nums { font-variant-numeric: tabular-nums; }
+
+.label-xs {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.7);
+}
+
+/* =====================================================
+   INPUT FIELDS
+   ===================================================== */
+input, textarea, select {
+  font-family: inherit;
+  font-feature-settings: inherit;
+}
+
+/* Remove browser autofill yellow background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #1e293b inset;
+  -webkit-text-fill-color: #f1f5f9;
+  transition: background-color 5000s ease-in-out;
+}
+
+/* =====================================================
+   IMAGES
+   ===================================================== */
+img {
+  max-width: 100%;
+  display: block;
+  /* Prevent layout shift during load */
+  content-visibility: auto;
+}
+
+/* =====================================================
+   BUTTON BASE
+   ===================================================== */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* =====================================================
+   SECTION DIVIDERS
+   ===================================================== */
+.section-title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  letter-spacing: -0.01em;
+}
+
+.section-sub {
+  font-size: 0.6875rem;
+  color: rgba(100, 116, 139, 0.8);
+  margin-top: 0.125rem;
+}

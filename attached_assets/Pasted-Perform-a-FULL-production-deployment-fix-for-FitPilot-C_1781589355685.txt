@@ -1,0 +1,147 @@
+Perform a FULL production deployment fix for FitPilot (CRITICAL).
+
+GOAL:
+Make the project fully deployable on Vercel WITHOUT errors.
+
+========================================
+❌ CURRENT PROBLEMS
+==================
+
+1. Vercel error:
+   "No Output Directory named 'dist' found"
+
+2. gym-app has no build script:
+   npm run build → Missing script
+
+3. Vercel is not correctly detecting Vite build output
+
+4. Frontend + backend monorepo not configured properly
+
+========================================
+✅ REQUIRED FIXES
+================
+
+STEP 1 — FIX gym-app package.json
+
+Inside: artifacts/gym-app/package.json
+
+ADD or FIX scripts:
+
+"scripts": {
+"dev": "vite",
+"build": "vite build",
+"preview": "vite preview"
+}
+
+Ensure Vite is installed and working.
+
+If missing, install:
+
+* vite
+* @vitejs/plugin-react
+
+========================================
+
+STEP 2 — VERIFY VITE OUTPUT CONFIG
+
+Check vite.config.js:
+
+Ensure:
+
+export default defineConfig({
+build: {
+outDir: "dist"
+}
+})
+
+========================================
+
+STEP 3 — ENSURE VERCEL OUTPUT DIRECTORY
+
+Vercel settings MUST be:
+
+Root Directory:
+artifacts/gym-app
+
+Build Command:
+npm run build
+
+Output Directory:
+dist
+
+========================================
+
+STEP 4 — ADD vercel.json (IMPORTANT FIX)
+
+Create file at project root:
+
+vercel.json
+
+with:
+
+{
+"version": 2,
+"builds": [
+{
+"src": "artifacts/gym-app/package.json",
+"use": "@vercel/static-build",
+"config": {
+"distDir": "dist"
+}
+}
+],
+"routes": [
+{
+"src": "/(.*)",
+"dest": "/index.html"
+}
+]
+}
+
+========================================
+
+STEP 5 — CLEAN BUILD TEST
+
+Run:
+
+cd artifacts/gym-app
+npm install
+npm run build
+
+Must generate:
+
+dist/
+
+========================================
+
+STEP 6 — FINAL DEPLOY CHECK
+
+Ensure:
+
+✔ No missing build scripts
+✔ dist folder exists after build
+✔ No TypeScript blocking errors
+✔ Vite build succeeds locally
+✔ Vercel detects correct output
+
+========================================
+🚀 RESULT REQUIRED
+
+After fix:
+
+* Vercel deploy succeeds
+* No "dist not found" error
+* Homepage loads correctly
+* No 404
+* Gym portal works
+
+========================================
+DO NOT:
+
+* Break backend
+* Change Supabase logic
+* Change authentication
+* Remove features
+* Modify UI design
+
+ONLY fix build + deployment configuration.

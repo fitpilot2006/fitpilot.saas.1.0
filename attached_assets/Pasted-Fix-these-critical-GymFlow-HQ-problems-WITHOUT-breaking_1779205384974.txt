@@ -1,0 +1,133 @@
+Fix these critical GymFlow HQ problems WITHOUT breaking Supabase, existing users, database, auth system, or current gym data.
+
+===================================
+1. FIX QR CAMERA SCANNER
+===================================
+Current issue:
+- Camera does not open.
+
+Fix:
+- Repair QR scanner permissions and initialization.
+- Use modern browser camera API.
+- Add:
+  - Start Camera button
+  - Retry Camera button
+  - Mobile support
+  - Desktop support
+- Auto mark attendance after scan.
+- Add success animation + sound.
+- Show proper errors instead of blank screen.
+
+===================================
+2. FIX MEMBER PORTAL LOGIN
+===================================
+Current issue:
+- Members login/signup opens Gym Dashboard.
+
+Required:
+- Members must ONLY access Member Portal.
+- Gym owners/staff must ONLY access Gym Dashboard.
+
+Create proper role-based authentication:
+- member → member portal
+- gym_owner → gym dashboard
+- staff → staff dashboard
+- admin → admin panel
+
+Member Portal must include:
+- Modern profile section
+- Membership QR card
+- Download QR button
+- Attendance history
+- Total gym visits this month
+- Membership expiry
+- Payment history
+- Active plan
+- Workout progress
+- Notifications
+- Mobile responsive design
+- Smooth animations
+
+===================================
+3. FIX PAYMENT CALCULATIONS
+===================================
+Current issue:
+- Pending Payments
+- Monthly Revenue
+do not update automatically.
+
+Fix:
+- When payment added:
+  - revenue updates instantly
+  - pending payments update
+  - dashboard cards refresh automatically
+- Add real-time dashboard updates using Supabase subscriptions.
+- Fix all payment calculations.
+- Ensure no duplicate revenue entries happen.
+
+===================================
+4. FIX LOGO & BANNER DISPLAY
+===================================
+Current issue:
+- Uploaded logo/banner not showing in dashboard and portal.
+
+Fix:
+- Correct Supabase storage paths.
+- Ensure uploaded images display in:
+  - sidebar
+  - gym dashboard
+  - member portal
+  - login page branding
+- Add image fallback if upload missing.
+- Optimize image loading speed.
+
+===================================
+5. COMPLETE UI/UX REDESIGN
+===================================
+The app still looks basic.
+
+Transform the app into a professional premium SaaS fitness platform.
+
+Improve:
+- Dashboard layouts
+- Cards
+- Typography
+- Colors
+- Sidebar
+- Buttons
+- Forms
+- Tables
+- Charts
+- Empty states
+- Loading states
+
+Add:
+- Glassmorphism
+- Smooth animations
+- Hover effects
+- Gradient buttons
+- Modern charts
+- Animated counters
+- Responsive mobile design
+- Professional spacing
+- Better shadows
+- Modern SaaS style
+
+Make UI quality similar to:
+- Stripe
+- Notion
+- Linear
+- Modern fitness SaaS apps
+
+===================================
+6. IMPORTANT
+===================================
+- Do NOT remove existing data
+- Do NOT overwrite Supabase tables
+- Do NOT break auth
+- Keep current users working
+- Fix all TypeScript errors
+- Fix all imports
+- Auto install missing packages
+- Ensure Replit preview works correctly
+- Make app production-ready

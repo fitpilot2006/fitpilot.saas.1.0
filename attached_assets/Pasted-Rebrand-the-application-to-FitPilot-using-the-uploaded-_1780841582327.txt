@@ -1,0 +1,101 @@
+Rebrand the application to FitPilot using the uploaded logo file.
+
+Platform Branding
+
+* Platform Name: FitPilot
+* Tagline: Powering Stronger Gyms
+* Support Email: [fitpilot.saas@gmail.com](mailto:fitpilot.saas@gmail.com)
+
+Brand Colors
+
+* Red: #E10600
+* Black: #000000
+* White: #FFFFFF
+
+Use the uploaded logo asset throughout the application.
+
+Apply Branding To
+
+* Login page
+* Signup page
+* Dashboard header
+* Sidebar
+* Footer
+* Browser tab title
+* Email templates
+* Error pages
+* Loading screens
+* PWA manifest
+* SEO metadata
+* Favicon
+* Mobile navigation
+
+Browser Title
+
+FitPilot | Gym Management Software
+
+Meta Description
+
+FitPilot helps gym owners manage memberships, attendance, payments, staff, and business operations from one powerful platform.
+
+Footer
+
+© 2026 FitPilot. All rights reserved.
+
+Support:
+[fitpilot.saas@gmail.com](mailto:fitpilot.saas@gmail.com)
+
+Favicon
+
+Use the FP monogram from the uploaded logo.
+
+PWA Manifest
+
+name: FitPilot
+
+short_name: FitPilot
+
+description: Gym Management SaaS Platform
+
+Critical Safety Requirements
+
+This is a multi-tenant SaaS application.
+
+DO NOT MODIFY:
+
+* gym names
+* gym logos
+* gym profile settings
+* gym branding
+* gym owner data
+* members
+* payments
+* attendance
+* subscriptions
+* Supabase records
+* database schema
+* RLS policies
+* authentication logic
+* existing business logic
+
+Gym owners must continue using their own gym names, logos, and branding exactly as before.
+
+Only update platform-level branding belonging to the SaaS itself.
+
+Requirements
+
+* Keep all current functionality working
+* Keep Supabase integration unchanged
+* Keep authentication unchanged
+* Keep database operations unchanged
+* Keep gym-specific branding untouched
+
+After implementation:
+
+* Verify logo displays correctly
+* Verify favicon works
+* Verify browser title updates
+* Verify mobile responsiveness
+* Verify no build errors
+* Verify no database changes were made
+* Verify gym branding still works independently from FitPilot branding

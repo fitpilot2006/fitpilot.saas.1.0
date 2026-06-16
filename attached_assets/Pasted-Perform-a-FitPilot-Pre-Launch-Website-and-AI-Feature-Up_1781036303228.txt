@@ -1,0 +1,331 @@
+Perform a FitPilot Pre-Launch Website and AI Feature Upgrade.
+
+GOAL
+
+Improve the landing page, AI features, user experience, and marketing presentation without breaking any existing functionality.
+
+Do NOT break:
+
+* Authentication
+* Database
+* Supabase integration
+* Gym management
+* Attendance
+* Payments
+* Members
+* Admin portal
+* Member portal
+
+---
+
+1. FIX CONTACT / EMAIL US BUTTON
+
+---
+
+Current issue:
+
+The "Email Us" button does not open the user's email client.
+
+Fix:
+
+When users click Email Us:
+
+mailto[.saas@gmail.com](mailto:.saas@gmail.com)
+
+Subject:
+
+FitPilot Inquiry
+
+Body:
+
+Hello FitPilot Team,
+
+I would like to learn more about FitPilot.
+
+Thank you.
+
+Ensure button works on:
+
+* Desktop
+* Mobile
+* Chrome
+* Safari
+* Edge
+
+---
+
+2. LANDING PAGE FEATURE REORGANIZATION
+
+---
+
+Remove from landing page feature cards:
+
+* AI Workout Generator
+* AI Diet Planner
+
+These should no longer appear as standalone primary features.
+
+Instead move them into:
+
+"Member Experience Features"
+
+Create a premium section:
+
+AI-Powered Member Coaching
+
+Include:
+
+* Personalized Workout Programs
+* AI Nutrition Planning
+* Goal Tracking
+* Progress Monitoring
+* Smart Recommendations
+* Coach-Level Program Generation
+
+---
+
+3. ADD COMING SOON SECTION
+
+---
+
+Create a premium roadmap section.
+
+Title:
+
+Coming Soon
+
+Add professional feature cards:
+
+* Mobile App (iOS & Android)
+
+* WhatsApp Automation
+
+* Smart Member Retention AI
+
+* AI Personal Trainer Chat
+
+* Nutrition Tracking
+
+* Wearable Device Integration
+
+* Body Composition Analytics
+
+* Automated Marketing Campaigns
+
+* Staff Management
+
+* Lead Management CRM
+
+* Online Membership Sales
+
+* AI Business Insights
+
+* Multi-Branch Management
+
+* Smart Revenue Forecasting
+
+Display as:
+
+Coming Soon
+
+without promising release dates.
+
+---
+
+4. IMPROVE SCREENSHOT SHOWCASE
+
+---
+
+Add more application screenshots.
+
+Sections:
+
+* Dashboard
+* Member Management
+* Attendance Tracking
+* Payments
+* Reports
+* AI Member Coaching
+
+Add labels beneath screenshots.
+
+Create a modern SaaS showcase style similar to:
+
+* Stripe
+* Notion
+* Linear
+* Monday.com
+
+Use smooth transitions and animations.
+
+---
+
+5. UPGRADE AI WORKOUT GENERATOR
+
+---
+
+Current problem:
+
+Plans are too similar.
+
+Generate plans using:
+
+* Age
+* Gender
+* Weight
+* Height
+* BMI
+* Fitness Level
+* Goal
+* Training Days
+* Workout Location
+* Equipment Availability
+* Injuries
+* Limitations
+
+Support goals:
+
+* Weight Loss
+* Muscle Gain
+* Strength
+* General Fitness
+
+Generate:
+
+4-week programs
+
+Week 1
+Week 2
+Week 3
+Week 4
+
+Include:
+
+* Different exercises
+* Progressive overload
+* Warmups
+* Cooldowns
+* Recovery recommendations
+* Rest day guidance
+* Weekly progression
+
+Programs must feel comparable to:
+
+* workout.lol
+* professional online coaching platforms
+* certified trainers
+
+Avoid:
+
+* Duplicate workouts
+* Repetitive exercises
+* Generic plans
+
+---
+
+6. UPGRADE AI DIET PLANNER
+
+---
+
+Generate plans using:
+
+* Age
+* Gender
+* Weight
+* Height
+* BMI
+* Activity Level
+* Goal
+* Dietary Preference
+
+Support:
+
+* Standard
+* Vegetarian
+* Vegan
+* Halal
+
+Calculate:
+
+* Calories
+* Protein
+* Carbohydrates
+* Fat
+* Water Intake
+
+Generate:
+
+* Breakfast
+* Lunch
+* Dinner
+* Snacks
+
+Requirements:
+
+* Different plans for different goals
+* Different calorie targets
+* Realistic foods
+* Practical portions
+* Regional flexibility
+
+Avoid:
+
+* Generic diets
+* Repeated meal plans
+* Unrealistic foods
+
+---
+
+7. MEMBER PORTAL EXPERIENCE
+
+---
+
+Members should feel the plans were created specifically for them.
+
+Show:
+
+* Goal Summary
+* Fitness Profile
+* AI Analysis
+* Workout Plan
+* Nutrition Plan
+* Progress Recommendations
+
+Use a premium coaching experience.
+
+---
+
+8. LANDING PAGE POLISH
+
+---
+
+Improve:
+
+* Animations
+* Scroll effects
+* Hero section
+* Feature cards
+* Testimonials
+* Call-to-action sections
+
+Keep:
+
+* FitPilot branding
+* Logo
+* Colors
+* Existing design direction
+
+Make the website feel like a premium SaaS product capable of serving professional gyms.
+
+After completion provide:
+
+* Landing Page Upgrade Report
+* AI Improvement Report
+* New Features Added
+* Coming Soon Features Added
+* Email Button Verification
+* Testing Report
+
+Success Criteria:
+
+FitPilot should look and feel ready for real gym owners and members, with professional AI coaching features that generate highly personalized plans.

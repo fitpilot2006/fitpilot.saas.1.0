@@ -1,0 +1,184 @@
+```txt id="realfix02"
+STOP ADDING PLACEHOLDER UI.
+DO NOT ONLY CHANGE DESIGN.
+FIND THE REAL ROOT CAUSE AND FIX THE APP LOGIC.
+
+The app currently looks good but core systems are broken.
+Fix these EXACT issues completely and verify with real test data before finishing.
+
+==================================================
+1. DASHBOARD DATA IS ALWAYS ZERO
+==================================================
+
+Problem:
+Dashboard cards always show:
+- 0 members
+- 0 revenue
+- 0 attendance
+- 0 payments
+
+This is NOT a UI issue.
+This is a broken Supabase query/state problem.
+
+Tasks:
+- Find all dashboard queries.
+- Fix broken gym_id filtering.
+- Ensure logged in gym loads correct gym_id.
+- Connect cards with REAL Supabase tables:
+  - members
+  - payments
+  - attendance
+  - subscriptions
+- Fix realtime refresh after:
+  - adding member
+  - payment
+  - attendance
+- Remove all fake/static values.
+
+TEST AFTER FIX:
+- Create member
+- Add payment
+- Mark attendance
+- Dashboard MUST instantly update.
+
+==================================================
+2. BRANDING SYSTEM NOT APPLYING
+==================================================
+
+Problem:
+Changing branding does almost nothing.
+
+Tasks:
+- Remove hardcoded Tailwind colors.
+- Create GLOBAL CSS variable branding engine.
+
+Apply branding dynamically to:
+- sidebar
+- dashboard
+- buttons
+- navbar
+- cards
+- modals
+- login page
+- signup page
+- admin panel
+
+Branding must update:
+- colors
+- backgrounds
+- button colors
+- gradients
+- borders
+- hover states
+
+Apply instantly WITHOUT refresh.
+
+==================================================
+3. LOGIN/SIGNUP OUTSIDE THEME
+==================================================
+
+Make auth pages fully premium:
+- dark black background
+- dark red gradients
+- glassmorphism
+- modern animations
+- professional spacing
+
+Apply same theme to:
+- login
+- signup
+- admin login
+
+==================================================
+4. MEMBER CODE SYSTEM
+==================================================
+
+Problem:
+Member code missing.
+
+Tasks:
+- Add “Member Code” field in Add Member page.
+- Auto generate code if empty.
+- Save in database.
+- Show in member profile/list.
+
+When member signs up using gym code:
+- automatically connect to gym
+- update dashboard member count instantly
+
+==================================================
+5. DASHBOARD HEADER THUMBNAIL
+==================================================
+
+Problem:
+Thumbnail/banner not visible.
+
+Tasks:
+- Show uploaded banner in dashboard header.
+- Show in sidebar.
+- Add dark overlay.
+- Fix Supabase storage URLs.
+
+==================================================
+6. QR CAMERA BLACK SCREEN
+==================================================
+
+Problem:
+Camera opens black screen.
+
+Tasks:
+- Fix camera permission handling.
+- Fix video stream initialization.
+- Use rear camera on mobile.
+- Add retry camera button.
+- Verify QR detection works.
+
+==================================================
+7. ADMIN FULL GYM ACCESS
+==================================================
+
+Add admin ability to fully access/manage any gym.
+
+Tasks:
+- Add “Access Gym” button in admin panel.
+- Admin can open any gym dashboard directly.
+- Admin can manage:
+  - members
+  - payments
+  - attendance
+  - branding
+  - staff
+  - settings
+- Show clear indicator when admin is impersonating gym.
+
+==================================================
+8. ADMIN CHANGE GYM LOGIN
+==================================================
+
+Add ability for platform admin to:
+- change gym owner email
+- reset/change gym password
+- update gym account credentials safely
+
+Add secure admin controls in admin panel.
+
+==================================================
+9. FINAL VERIFICATION (IMPORTANT)
+==================================================
+
+Before finishing:
+Actually TEST everything.
+
+VERIFY:
+- dashboard numbers change
+- branding changes globally
+- buttons change color
+- thumbnail appears
+- member code exists
+- QR scanner works
+- auth redirects correctly
+- admin full access works
+- admin can change gym credentials
+
+DO NOT FINISH UNTIL ALL SYSTEMS WORK IN PREVIEW.
+```

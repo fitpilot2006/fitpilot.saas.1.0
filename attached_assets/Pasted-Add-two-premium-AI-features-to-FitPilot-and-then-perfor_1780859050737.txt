@@ -1,0 +1,230 @@
+Add two premium AI features to FitPilot and then perform a full production optimization and stability audit.
+
+FEATURE 1: AI WORKOUT GENERATOR
+
+Add AI Workout Generator to BOTH:
+
+* Gym Owner/Admin Portal
+* Member Portal
+
+Member Portal Features:
+
+Members can:
+
+* Generate workout plans
+* Regenerate plans
+* Save plans
+* View plan history
+* Update goals and preferences
+
+Inputs:
+
+* Age
+* Gender
+* Weight
+* Height
+* Fitness Level
+* Goal
+* Training Days Per Week
+
+Goals:
+
+* Weight Loss
+* Muscle Gain
+* Strength
+* General Fitness
+
+Output:
+
+* Weekly workout plan
+* Exercises
+* Sets
+* Reps
+* Rest periods
+* Training notes
+
+Admin Portal Features:
+
+Admins can:
+
+* Generate plans
+* Edit plans
+* Assign plans to members
+* View member plans
+* Delete plans
+* Print plans
+
+FEATURE 2: AI DIET PLANNER
+
+Add AI Diet Planner to BOTH:
+
+* Gym Owner/Admin Portal
+* Member Portal
+
+Member Portal Features:
+
+Members can:
+
+* Generate diet plans
+* Regenerate diet plans
+* Save plans
+* View diet history
+* Update goals and preferences
+
+Inputs:
+
+* Age
+* Gender
+* Weight
+* Height
+* Goal
+
+Output:
+
+* Daily calorie target
+* Protein target
+* Carbohydrate target
+* Fat target
+* Breakfast plan
+* Lunch plan
+* Dinner plan
+* Snack recommendations
+* Water intake recommendation
+
+Admin Portal Features:
+
+Admins can:
+
+* Generate plans
+* Edit plans
+* Assign plans to members
+* View member plans
+* Delete plans
+* Print plans
+
+DATABASE
+
+Create only the required tables for:
+
+* Workout Plans
+* Diet Plans
+
+Link plans to:
+
+* Gym
+* Member
+
+Maintain complete multi-tenant isolation.
+
+PERFORM FULL PRODUCTION OPTIMIZATION AUDIT
+
+Goal:
+Make FitPilot faster, more stable, scalable, and production-ready without changing existing functionality.
+
+DO NOT:
+
+* Change UI design
+* Change branding
+* Change FitPilot logo
+* Remove features
+* Break Supabase integration
+* Break authentication
+
+Optimize:
+
+1. Frontend Performance
+
+* Reduce bundle size
+* Remove unused dependencies
+* Enable code splitting
+* Lazy load pages and components
+* Optimize React rendering
+* Prevent unnecessary re-renders
+* Optimize images and assets
+
+2. Database Performance
+
+* Audit all Supabase queries
+* Add missing indexes
+* Optimize joins
+* Optimize dashboard statistics queries
+* Optimize member search
+* Optimize attendance queries
+* Optimize payment queries
+
+3. Scalability
+
+* Add pagination where needed
+* Prevent loading large datasets at once
+* Optimize API requests
+* Reduce duplicate database calls
+* Improve caching strategy
+
+4. Stability
+
+* Add proper error handling
+* Add loading states
+* Add fallback UI
+* Prevent application crashes
+* Improve network failure handling
+* Improve Supabase connection handling
+
+5. Security
+
+* Verify RLS policies
+* Verify authentication flow
+* Check for exposed secrets
+* Verify multi-tenant isolation
+
+6. Mobile Optimization
+
+* Improve responsiveness
+* Improve touch interactions
+* Improve mobile performance
+
+7. Production Readiness
+
+* Check SEO
+* Check favicon
+* Check metadata
+* Check PWA configuration
+* Check build configuration
+
+Testing Required
+
+Test:
+
+* Login
+* Logout
+* Create member
+* Edit member
+* Delete member
+* Attendance
+* Payments
+* Dashboard
+* Gym management
+* Search functionality
+* Workout Generator
+* Diet Planner
+* Member Portal
+* Supabase saving
+
+After optimization provide:
+
+* Performance report
+* Stability report
+* Security report
+* Scalability report
+* Estimated gym capacity
+* Estimated member capacity
+* List of improvements performed
+
+Requirements:
+
+* Keep all existing functionality working
+* Keep Supabase data intact
+* Keep all gym data intact
+* Keep branding unchanged
+* Keep FitPilot logo and assets unchanged
+
+The application must remain fully functional while becoming faster, more stable, scalable, and production-ready.

@@ -1,0 +1,105 @@
+Fix these GymFlow HQ issues WITHOUT breaking Supabase, auth, existing users, or database.
+
+====================================
+1. ADD “APPLY FOR ACCESS CODE” BUTTON
+====================================
+Current issue:
+- New gyms cannot request access code approval.
+
+Required:
+- In Gym Signup page add button:
+  “Apply For Access Code”
+
+When clicked:
+- Open form with:
+  - Gym Name
+  - Owner Name
+  - Phone Number
+  - Country Code
+  - Email
+  - Address
+  - Plan Request
+  - Notes
+
+After submit:
+- Save request to database
+- Show request inside Admin Panel → Pending Gyms
+- Admin can:
+  - approve
+  - reject
+  - assign expiry
+  - assign member limit
+  - generate access code
+
+====================================
+2. FIX LOGO & THUMBNAIL DISPLAY
+====================================
+Current issue:
+- Uploaded logo/banner not visible in dashboard.
+
+Fix:
+- Correct Supabase storage bucket paths.
+- Ensure uploaded images display in:
+  - sidebar
+  - dashboard topbar
+  - member portal
+  - login page
+  - gym profile
+
+Add:
+- image fallback
+- loading skeleton
+- proper responsive scaling
+
+====================================
+3. FIX QR CAMERA SCANNER
+====================================
+Current issue:
+- Scanner only shows black screen.
+
+Fix camera system completely:
+- Proper camera permission handling
+- Automatically start camera
+- Add:
+  - Start Camera button
+  - Retry Camera button
+  - Switch Camera button
+- Support:
+  - Android
+  - iPhone
+  - desktop browser
+  - Replit preview
+
+Fix scanner rendering issue.
+Ensure live camera feed appears properly.
+
+After successful scan:
+- mark attendance automatically
+- show success animation
+- play success sound
+
+====================================
+4. FIX MONTHLY REVENUE
+====================================
+Current issue:
+- Monthly revenue not updating properly.
+- Pending payment card should not exist.
+
+Required:
+- REMOVE “Pending Revenue/Payments” card completely.
+- ALL added payments must be included in Monthly Revenue automatically.
+- Revenue updates instantly after payment creation.
+- Use realtime dashboard refresh.
+- Prevent duplicate calculations.
+
+====================================
+5. IMPORTANT
+====================================
+- Do NOT remove existing data
+- Do NOT break Supabase auth
+- Keep current users working
+- Fix TypeScript errors
+- Fix imports
+- Keep mobile responsive
+- Ensure Replit preview works correctly
+- Make app production-ready

@@ -1,0 +1,135 @@
+Perform a complete Vercel Deployment Compatibility Audit for FitPilot.
+
+Current Problem:
+
+Vercel build fails with:
+
+Cannot find module '@workspace/db'
+
+Goal:
+
+Make the application fully deployable on Vercel without build errors.
+
+Requirements:
+
+1. Audit the entire project structure.
+
+Verify:
+
+* package.json
+* pnpm-workspace.yaml
+* tsconfig.json
+* tsconfig.base.json
+* vite.config.js
+* all workspace packages
+
+2. Locate all imports using:
+
+@workspace/db
+
+Verify:
+
+* package exists
+* exports exist
+* build configuration exists
+* TypeScript path mapping exists
+
+3. Fix all workspace and monorepo issues.
+
+If Vercel cannot resolve workspace packages:
+
+* Convert imports to valid relative imports where necessary
+* Or configure workspace packages correctly for Vercel
+
+4. Verify TypeScript configuration.
+
+Audit:
+
+* paths
+* aliases
+* references
+* module resolution
+
+Ensure Vercel can compile successfully.
+
+5. Verify package manager configuration.
+
+Project uses:
+
+pnpm
+
+Ensure:
+
+* pnpm workspace works
+* Vercel installs dependencies correctly
+* workspace packages are included in build
+
+6. Verify build process.
+
+Required commands:
+
+Install:
+pnpm install
+
+Build:
+pnpm build
+
+The build must complete without errors.
+
+7. Generate any required files.
+
+If missing:
+
+* vercel.json
+* workspace configuration
+* TypeScript configuration
+* package exports
+
+Create them correctly.
+
+8. Remove all deployment blockers.
+
+Fix:
+
+* Missing modules
+* Invalid aliases
+* Broken imports
+* Build failures
+* Type errors that block deployment
+
+9. Test deployment readiness.
+
+Simulate Vercel build locally.
+
+Confirm:
+
+* Build succeeds
+* No unresolved imports
+* No missing packages
+* No workspace resolution errors
+
+10. Final Report
+
+Provide:
+
+* Root cause of @workspace/db error
+* Files changed
+* Configuration changes
+* Confirmation that project is deployable on Vercel
+
+IMPORTANT:
+
+Do not remove application functionality.
+
+Do not break:
+
+* Authentication
+* Admin Portal
+* Gym Portal
+* Member Portal
+* Payments
+* Attendance
+* Workout Plans
+* Diet Plans
+
+Only make changes required for successful Vercel deployment.

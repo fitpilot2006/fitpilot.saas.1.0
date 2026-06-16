@@ -1,0 +1,3 @@
+- [Member portal /me endpoints](member-portal-me-endpoints.md) — use /me routes for member self-service; /me must be registered BEFORE /:id in Express.
+- [AI plan routes pattern](ai-plan-routes-pattern.md) — POST /me saves for authenticated member, GET /me queries by gymId+memberId found via email lookup.
+- [Drizzle relational API broken on Supabase pooler](drizzle-supabase-pooler.md) — db.query.* silently returns null; always use db.select().from().where() instead.

@@ -1,0 +1,114 @@
+{
+	"platform_admins": [
+		{
+			"id": 1,
+			"email": "rearahad2006@gmail.com",
+			"password_hash": "$2b$10$7kJH1r9Yh8dJ5mY9Q5r3UuQ5Q7mX4zM8m6Q8h8g8vQz5YwX5YzK1G",
+			"name": "Platform Owner",
+			"created_at": "2026-05-18T16:55:54.19279+00:00"
+		}
+	],
+	"gyms": [
+		{
+			"id": "f28fad51-40ba-4db4-a2ce-a9f4e7dadbb8",
+			"gym_name": null,
+			"owner_id": "d6b4f586-2b06-4ea9-a1f0-7ddc79084f6f",
+			"created_at": "2026-05-14T10:42:51.302896+00:00",
+			"name": "etile fitness work"
+		},
+		{
+			"id": "f415061a-cd38-4858-a1cb-52298674a67b",
+			"gym_name": null,
+			"owner_id": "f8c9412f-ddef-4241-854f-6d39793a4bf8",
+			"created_at": "2026-05-14T10:44:25.346405+00:00",
+			"name": "etile fitness work"
+		},
+		{
+			"id": "fab2c3f3-2dbd-41d8-9a9a-25c476fd460c",
+			"gym_name": null,
+			"owner_id": "8bd4a439-90d1-4075-89fa-f0b5637112ab",
+			"created_at": "2026-05-14T10:46:23.480593+00:00",
+			"name": "etile fitness work"
+		},
+		{
+			"id": "71c1dc9f-e0a4-4b19-8ff9-8da856187f21",
+			"gym_name": null,
+			"owner_id": "b1f96355-fd7c-4715-93e0-0ab2912703e9",
+			"created_at": "2026-05-14T10:59:26.343387+00:00",
+			"name": "khan club"
+		},
+		{
+			"id": "e5efe325-5975-4a72-9881-e27f0d7b8d5d",
+			"gym_name": null,
+			"owner_id": "07755551-fdc4-4a18-a05d-bbd43b56350f",
+			"created_at": "2026-05-14T11:07:31.816551+00:00",
+			"name": "abbasi club"
+		}
+	],
+	"members": [
+		{
+			"id": "d8e3ce69-850b-4c81-889a-205fd5767e86",
+			"created_at": "2026-05-14T11:05:49.649432+00:00",
+			"name": "fatima",
+			"phone": "000",
+			"membership_type": "standard",
+			"expiry_date": null,
+			"status": "active",
+			"email": "fatima00666@gmail.com",
+			"membership_expiry": "2026-06-13",
+			"notes": null,
+			"qr_code": null,
+			"avatar_url": null,
+			"gym_id": null,
+			"payment_status": null,
+			"last_check_in": null
+		}
+	],
+	"payments": [],
+	"attendance": [],
+	"gym_subscriptions": [],
+	"gym_member_codes": [],
+	"access_codes": [
+		{
+			"id": "0923ef05-4204-42c3-8ac9-28acb499bd9b",
+			"code": "GYM-151-250",
+			"active": true,
+			"used": false,
+			"created_at": "2026-05-18T10:49:13.282315+00:00",
+			"used_at": null
+		}
+	],
+	"invite_codes": [
+		{
+			"id": "cec98d3d-9e20-4022-91d5-a493588e79b7",
+			"code": "GYM-AX92-KLQ1",
+			"active": true,
+			"used": false,
+			"created_at": "2026-05-17T08:19:33.471809+00:00",
+			"used_at": null,
+			"used_by_gym_id": null,
+			"used_by_email": null
+		},
+		{
+			"id": "0fdf37fe-2b58-4e7f-aacc-d73a4ddccdb5",
+			"code": "FIT-882K-POWER",
+			"active": true,
+			"used": false,
+			"created_at": "2026-05-17T08:19:33.471809+00:00",
+			"used_at": null,
+			"used_by_gym_id": null,
+			"used_by_email": null
+		},
+		{
+			"id": "df09d28c-cd69-4550-a54b-c6a990131594",
+			"code": "ABBASI-773X",
+			"active": true,
+			"used": false,
+			"created_at": "2026-05-17T08:19:33.471809+00:00",
+			"used_at": null,
+			"used_by_gym_id": null,
+			"used_by_email": null
+		}
+	],
+	"workouts": []
+}

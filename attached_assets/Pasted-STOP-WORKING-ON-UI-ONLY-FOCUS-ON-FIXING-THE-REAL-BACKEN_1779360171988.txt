@@ -1,0 +1,154 @@
+STOP WORKING ON UI ONLY.
+FOCUS ON FIXING THE REAL BACKEND/DATABASE LOGIC.
+
+The app design is mostly good now.
+The MAIN remaining issue is broken dashboard logic and Supabase data flow.
+
+==================================================
+1. FIX DASHBOARD DATA (MOST IMPORTANT)
+==================================================
+
+Dashboard still shows:
+- 0 members
+- 0 payments
+- 0 revenue
+- 0 attendance
+
+Find the REAL root cause and fix it completely.
+
+Tasks:
+- Debug ALL dashboard queries.
+- Add console logs temporarily for:
+  - current logged in user
+  - current gym_id
+  - fetched members
+  - fetched payments
+  - fetched attendance
+- Verify correct gym_id is being passed into every query.
+
+Fix all queries using:
+.eq("gym_id", currentGymId)
+
+Connect dashboard cards with REAL data from:
+- members
+- payments
+- attendance
+- subscriptions
+- workout_plans
+
+==================================================
+2. FIX SUPABASE RLS POLICIES
+==================================================
+
+Most likely Supabase RLS is blocking dashboard reads.
+
+Check and fix ALL RLS policies for:
+- members
+- payments
+- attendance
+- gyms
+
+Ensure logged in gym owner can:
+- read own gym data
+- insert own gym data
+- update own gym data
+
+Verify queries return real data instead of empty arrays.
+
+==================================================
+3. FIX REALTIME DASHBOARD UPDATES
+==================================================
+
+After:
+- adding member
+- payment
+- attendance
+- renewal
+
+dashboard must refresh instantly.
+
+Use:
+- realtime listeners
+OR
+- proper query invalidation/refetch
+
+==================================================
+4. FIX MEMBER COUNTS
+==================================================
+
+Correct calculations:
+- Total Members
+- Active Members
+- Expired Members
+- New This Month
+
+based on REAL database records.
+
+==================================================
+5. FIX REVENUE
+==================================================
+
+Monthly revenue must:
+- sum all paid payments
+- filter current month
+- update instantly
+
+REMOVE fake/static revenue values.
+
+==================================================
+6. FIX BRANDING ENGINE COMPLETELY
+==================================================
+
+Branding still partially broken.
+
+Remove ALL hardcoded colors.
+
+Use CSS variables globally:
+--primary-color
+--secondary-color
+--background-color
+--button-color
+
+Apply branding dynamically to:
+- sidebar
+- navbar
+- dashboard
+- buttons
+- cards
+- login/signup pages
+- admin panel
+
+Buttons MUST change color from branding settings.
+
+==================================================
+7. FIX HEADER THUMBNAIL
+==================================================
+
+Show uploaded gym thumbnail/banner in:
+- dashboard hero header
+- sidebar
+- mobile menu
+
+Fix Supabase storage URLs and rendering.
+
+==================================================
+8. FINAL DEBUG VERIFICATION
+==================================================
+
+Before finishing:
+TEST EVERYTHING using REAL data.
+
+Create:
+- test member
+- test payment
+- attendance record
+
+VERIFY:
+- dashboard updates instantly
+- revenue updates
+- member counts update
+- branding colors apply globally
+- thumbnail appears
+- buttons change color
+
+DO NOT FINISH UNTIL ALL LOGIC WORKS IN PREVIEW.

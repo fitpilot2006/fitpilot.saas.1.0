@@ -1,0 +1,108 @@
+FitPilot Recovery and Startup Task
+
+I have uploaded the complete FitPilot project.
+
+Your job is to fully recover, configure, and start the application.
+
+Goals:
+
+1. Get the application running successfully.
+2. Restore Preview.
+3. Connect the existing Supabase project.
+4. Restore existing Platform Admin accounts.
+5. Restore existing Gym Owner accounts.
+6. Restore existing Member accounts.
+7. Do not create fake data.
+8. Do not create a new database.
+9. Use the original production database.
+
+Tasks:
+
+A. Project Audit
+
+* Inspect the entire codebase.
+* Identify framework and architecture.
+* Identify all required environment variables.
+* Identify all database connections.
+* Identify authentication flow.
+
+B. Fix Build Errors
+
+Resolve:
+
+* Missing workspace packages
+* Missing imports
+* TypeScript errors
+* pnpm workspace issues
+* Build failures
+* Preview failures
+
+If @workspace/db or any workspace package is missing:
+
+* Locate the original package.
+* Repair imports.
+* Restore workspace configuration.
+
+C. Database Recovery
+
+Verify:
+
+* Supabase URL
+* Supabase Keys
+* Database connection
+
+Connect to the existing production database.
+
+Do not overwrite existing data.
+
+D. Authentication Recovery
+
+Verify:
+
+* Platform Admin login
+* Gym Owner login
+* Member login
+
+Use existing credentials stored in the database.
+
+Do not reset passwords.
+
+Do not create replacement accounts unless absolutely required.
+
+E. Preview Recovery
+
+Ensure:
+
+* Preview starts successfully
+* Home page loads
+* Admin portal loads
+* Gym portal loads
+* Member portal loads
+
+F. Testing
+
+Test:
+
+* Platform Admin login
+* Gym login
+* Member login
+* Attendance
+* Payments
+* Workout plans
+* Diet plans
+* Access code system
+
+G. Final Report
+
+Provide:
+
+* Root cause of any failures
+* Build fixes applied
+* Database status
+* Authentication status
+* Preview URL
+* Remaining issues
+
+Goal:
+
+FitPilot must run successfully in Replit Preview using the original Supabase database and original user accounts.

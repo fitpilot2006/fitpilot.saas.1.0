@@ -1,0 +1,786 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: GymFlow Gym Management API
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: members
+    description: Member management
+  - name: attendance
+    description: Attendance tracking
+  - name: payments
+    description: Payment tracking
+  - name: workout-plans
+    description: Workout plans
+  - name: branding
+    description: Gym branding settings
+  - name: dashboard
+    description: Dashboard analytics
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+
+  # ─── Members ───────────────────────────────────────────────
+  /members:
+    get:
+      operationId: listMembers
+      tags: [members]
+      summary: List all members
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [active, expired, suspended]
+        - name: search
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: List of members
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Member"
+    post:
+      operationId: createMember
+      tags: [members]
+      summary: Create a new member
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/MemberInput"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Member"
+
+  /members/{id}:
+    get:
+      operationId: getMember
+      tags: [members]
+      summary: Get a member by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Member
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Member"
+        "404":
+          description: Not found
+    patch:
+      operationId: updateMember
+      tags: [members]
+      summary: Update a member
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/MemberUpdate"
+      responses:
+        "200":
+          description: Updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Member"
+    delete:
+      operationId: deleteMember
+      tags: [members]
+      summary: Delete a member
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Deleted
+
+  # ─── Attendance ─────────────────────────────────────────────
+  /attendance:
+    get:
+      operationId: listAttendance
+      tags: [attendance]
+      summary: List attendance records
+      parameters:
+        - name: memberId
+          in: query
+          schema:
+            type: integer
+        - name: date
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: List of attendance records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Attendance"
+    post:
+      operationId: checkIn
+      tags: [attendance]
+      summary: Record member check-in
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AttendanceInput"
+      responses:
+        "201":
+          description: Check-in recorded
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Attendance"
+
+  /attendance/today:
+    get:
+      operationId: getTodayAttendance
+      tags: [attendance]
+      summary: Get today's attendance
+      responses:
+        "200":
+          description: Today's attendance records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Attendance"
+
+  # ─── Payments ────────────────────────────────────────────────
+  /payments:
+    get:
+      operationId: listPayments
+      tags: [payments]
+      summary: List all payments
+      parameters:
+        - name: memberId
+          in: query
+          schema:
+            type: integer
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [paid, pending, overdue]
+      responses:
+        "200":
+          description: List of payments
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Payment"
+    post:
+      operationId: createPayment
+      tags: [payments]
+      summary: Record a payment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PaymentInput"
+      responses:
+        "201":
+          description: Payment recorded
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Payment"
+
+  /payments/{id}:
+    patch:
+      operationId: updatePayment
+      tags: [payments]
+      summary: Update a payment
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PaymentUpdate"
+      responses:
+        "200":
+          description: Updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Payment"
+
+  # ─── Workout Plans ──────────────────────────────────────────
+  /workout-plans:
+    get:
+      operationId: listWorkoutPlans
+      tags: [workout-plans]
+      summary: List all workout plans
+      responses:
+        "200":
+          description: List of workout plans
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/WorkoutPlan"
+    post:
+      operationId: createWorkoutPlan
+      tags: [workout-plans]
+      summary: Create a workout plan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WorkoutPlanInput"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WorkoutPlan"
+
+  /workout-plans/{id}:
+    get:
+      operationId: getWorkoutPlan
+      tags: [workout-plans]
+      summary: Get a workout plan
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Workout plan
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WorkoutPlan"
+    patch:
+      operationId: updateWorkoutPlan
+      tags: [workout-plans]
+      summary: Update a workout plan
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WorkoutPlanUpdate"
+      responses:
+        "200":
+          description: Updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WorkoutPlan"
+    delete:
+      operationId: deleteWorkoutPlan
+      tags: [workout-plans]
+      summary: Delete a workout plan
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Deleted
+
+  # ─── Branding ────────────────────────────────────────────────
+  /branding:
+    get:
+      operationId: getBranding
+      tags: [branding]
+      summary: Get gym branding settings
+      responses:
+        "200":
+          description: Branding settings
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Branding"
+    put:
+      operationId: updateBranding
+      tags: [branding]
+      summary: Update gym branding settings
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BrandingUpdate"
+      responses:
+        "200":
+          description: Updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Branding"
+
+  # ─── Dashboard ───────────────────────────────────────────────
+  /dashboard/stats:
+    get:
+      operationId: getDashboardStats
+      tags: [dashboard]
+      summary: Get dashboard analytics stats
+      responses:
+        "200":
+          description: Dashboard stats
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DashboardStats"
+
+  /dashboard/expiring-memberships:
+    get:
+      operationId: getExpiringMemberships
+      tags: [dashboard]
+      summary: Get members with expiring memberships (within 30 days)
+      responses:
+        "200":
+          description: Expiring memberships
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Member"
+
+  /dashboard/revenue-chart:
+    get:
+      operationId: getRevenueChart
+      tags: [dashboard]
+      summary: Get monthly revenue data for chart
+      responses:
+        "200":
+          description: Revenue chart data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/RevenueDataPoint"
+
+  /dashboard/attendance-chart:
+    get:
+      operationId: getAttendanceChart
+      tags: [dashboard]
+      summary: Get daily attendance data for chart (last 7 days)
+      responses:
+        "200":
+          description: Attendance chart data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/AttendanceDataPoint"
+
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+
+    Member:
+      type: object
+      required: [id, name, email, phone, membershipType, membershipExpiry, status, joinedAt]
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        membershipType:
+          type: string
+          enum: [basic, standard, premium]
+        membershipExpiry:
+          type: string
+          format: date
+        status:
+          type: string
+          enum: [active, expired, suspended]
+        joinedAt:
+          type: string
+          format: date-time
+        workoutPlanId:
+          type: ["integer", "null"]
+        notes:
+          type: ["string", "null"]
+
+    MemberInput:
+      type: object
+      required: [name, email, phone, membershipType, membershipExpiry]
+      properties:
+        name:
+          type: string
+          minLength: 1
+        email:
+          type: string
+          format: email
+        phone:
+          type: string
+        membershipType:
+          type: string
+          enum: [basic, standard, premium]
+        membershipExpiry:
+          type: string
+          format: date
+        workoutPlanId:
+          type: ["integer", "null"]
+        notes:
+          type: ["string", "null"]
+
+    MemberUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        membershipType:
+          type: string
+          enum: [basic, standard, premium]
+        membershipExpiry:
+          type: string
+          format: date
+        status:
+          type: string
+          enum: [active, expired, suspended]
+        workoutPlanId:
+          type: ["integer", "null"]
+        notes:
+          type: ["string", "null"]
+
+    Attendance:
+      type: object
+      required: [id, memberId, memberName, checkInAt]
+      properties:
+        id:
+          type: integer
+        memberId:
+          type: integer
+        memberName:
+          type: string
+        checkInAt:
+          type: string
+          format: date-time
+        checkOutAt:
+          type: ["string", "null"]
+          format: date-time
+        notes:
+          type: ["string", "null"]
+
+    AttendanceInput:
+      type: object
+      required: [memberId]
+      properties:
+        memberId:
+          type: integer
+        notes:
+          type: ["string", "null"]
+
+    Payment:
+      type: object
+      required: [id, memberId, memberName, amount, status, dueDate, createdAt]
+      properties:
+        id:
+          type: integer
+        memberId:
+          type: integer
+        memberName:
+          type: string
+        amount:
+          type: number
+        status:
+          type: string
+          enum: [paid, pending, overdue]
+        description:
+          type: ["string", "null"]
+        dueDate:
+          type: string
+          format: date
+        paidAt:
+          type: ["string", "null"]
+          format: date-time
+        createdAt:
+          type: string
+          format: date-time
+
+    PaymentInput:
+      type: object
+      required: [memberId, amount, dueDate]
+      properties:
+        memberId:
+          type: integer
+        amount:
+          type: number
+        description:
+          type: ["string", "null"]
+        dueDate:
+          type: string
+          format: date
+        status:
+          type: string
+          enum: [paid, pending, overdue]
+
+    PaymentUpdate:
+      type: object
+      properties:
+        amount:
+          type: number
+        status:
+          type: string
+          enum: [paid, pending, overdue]
+        description:
+          type: ["string", "null"]
+        dueDate:
+          type: string
+          format: date
+        paidAt:
+          type: ["string", "null"]
+
+    WorkoutPlan:
+      type: object
+      required: [id, name, level, durationWeeks, exercises, createdAt]
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: ["string", "null"]
+        level:
+          type: string
+          enum: [beginner, intermediate, advanced]
+        durationWeeks:
+          type: integer
+        exercises:
+          type: array
+          items:
+            $ref: "#/components/schemas/Exercise"
+        createdAt:
+          type: string
+          format: date-time
+
+    Exercise:
+      type: object
+      required: [name, sets, reps]
+      properties:
+        name:
+          type: string
+        sets:
+          type: integer
+        reps:
+          type: string
+        day:
+          type: ["string", "null"]
+        notes:
+          type: ["string", "null"]
+
+    WorkoutPlanInput:
+      type: object
+      required: [name, level, durationWeeks]
+      properties:
+        name:
+          type: string
+          minLength: 1
+        description:
+          type: ["string", "null"]
+        level:
+          type: string
+          enum: [beginner, intermediate, advanced]
+        durationWeeks:
+          type: integer
+        exercises:
+          type: array
+          items:
+            $ref: "#/components/schemas/Exercise"
+
+    WorkoutPlanUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: ["string", "null"]
+        level:
+          type: string
+          enum: [beginner, intermediate, advanced]
+        durationWeeks:
+          type: integer
+        exercises:
+          type: array
+          items:
+            $ref: "#/components/schemas/Exercise"
+
+    Branding:
+      type: object
+      required: [id, gymName, primaryColor, secondaryColor]
+      properties:
+        id:
+          type: integer
+        gymName:
+          type: string
+        tagline:
+          type: ["string", "null"]
+        logoUrl:
+          type: ["string", "null"]
+        bannerUrl:
+          type: ["string", "null"]
+        primaryColor:
+          type: string
+        secondaryColor:
+          type: string
+        accentColor:
+          type: ["string", "null"]
+        themeName:
+          type: ["string", "null"]
+        address:
+          type: ["string", "null"]
+        phone:
+          type: ["string", "null"]
+        email:
+          type: ["string", "null"]
+        website:
+          type: ["string", "null"]
+
+    BrandingUpdate:
+      type: object
+      properties:
+        gymName:
+          type: string
+        tagline:
+          type: ["string", "null"]
+        logoUrl:
+          type: ["string", "null"]
+        bannerUrl:
+          type: ["string", "null"]
+        primaryColor:
+          type: string
+        secondaryColor:
+          type: string
+        accentColor:
+          type: ["string", "null"]
+        themeName:
+          type: ["string", "null"]
+        address:
+          type: ["string", "null"]
+        phone:
+          type: ["string", "null"]
+        email:
+          type: ["string", "null"]
+        website:
+          type: ["string", "null"]
+
+    DashboardStats:
+      type: object
+      required: [totalMembers, activeMembers, expiredMembers, todayAttendance, monthlyRevenue, pendingPayments, totalWorkoutPlans, newMembersThisMonth]
+      properties:
+        totalMembers:
+          type: integer
+        activeMembers:
+          type: integer
+        expiredMembers:
+          type: integer
+        todayAttendance:
+          type: integer
+        monthlyRevenue:
+          type: number
+        pendingPayments:
+          type: number
+        totalWorkoutPlans:
+          type: integer
+        newMembersThisMonth:
+          type: integer
+
+    RevenueDataPoint:
+      type: object
+      required: [month, revenue]
+      properties:
+        month:
+          type: string
+        revenue:
+          type: number
+
+    AttendanceDataPoint:
+      type: object
+      required: [date, count]
+      properties:
+        date:
+          type: string
+        count:
+          type: integer
